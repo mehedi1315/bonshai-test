@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav <Menu></Menu></title>
+    <link rel="stylesheet" href="../public/output.css">
+</head>
+<body class=" mx-auto px-4 max-w-2xl">
+    <ul class=" flex justify-between">
+        <li><a href="javascript:;" class=" flex w-full px-8 py-3 border border-blue-500">btn 1</a></li>
+        <li id="btn" class=" relative"><a href="javascript:;" class=" flex w-full px-8 py-3 border border-blue-500">btn 2</a></li>
+        <ul id="sub-menu" class=" absolute hidden top-16 right-1/2 -translate-x-20 space-y-3 px-4">
+            <li id="drop1"><a href="https://www.youtube.com/watch?v=5EZ4BD16ODw"> dropmenu 1</a></li>
+            <li id="drop2"><a href="javascript:;"> dropmenu 2</a></li>
+            <li id="drop3"><a href="javascript:;"> dropmenu 3</a></li>
+        </ul>
+        <li><a href="javascript:;" class=" flex w-full px-8 py-3 border border-blue-500">btn 3</a></li>
+        <li><a href="javascript:;" class=" flex w-full px-8 py-3 border border-blue-500">btn 4</a></li>
+        <li><a href="javascript:;" class=" flex w-full px-8 py-3 border border-blue-500">btn 5</a></li>
+    </ul>
+
+    <script>
+        const btn = document.querySelector("#btn")
+        const subMenu = document.querySelector("#sub-menu")
+        const drop = document.querySelectorAll("#drop1, #drop2, #drop3")
+
+        btn.addEventListener("click", function(){
+            subMenu.classList.toggle("hidden")
+        })
+        drop.forEach(value => {
+            value.addEventListener("click", function(){
+                subMenu.classList.add("hidden")
+            })
+        })
+    </script>
+</body>
+</html>
+
+
+
+
